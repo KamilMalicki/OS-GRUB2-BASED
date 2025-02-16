@@ -1,8 +1,13 @@
+#include "screen.h"
+
 void kernel_main() {
-    char *video_memory = (char *)0xB8000;
-    video_memory[0] = 'H';
-    video_memory[1] = 0x07;
-    video_memory[2] = 'I';
-    video_memory[3] = 0x07;
+    clrscr();
+
+    set_color(0x0E); 
+    puts("HI\n");
+
+    set_color(0x4F); 
+    puts("hello in CGRUB2OS!");
+
     while (1);
 }
