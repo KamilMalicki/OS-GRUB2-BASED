@@ -6,7 +6,7 @@
 #define SCREEN_HEIGHT 25
 
 static size_t cursor_x = 0, cursor_y = 0;
-static unsigned char text_color = 0x07; // Domyślny: jasnoszary na czarnym tle
+static unsigned char text_color = 0x07;
 
 void set_color(unsigned char color) {
     text_color = color;
@@ -15,9 +15,9 @@ void set_color(unsigned char color) {
 void clrscr() {
     asm volatile (
         "mov $0xB8000, %edi\n"
-        "mov $0x0720, %ax\n"  // ' ' z atrybutem koloru 0x07 (domyślny)
-        "mov $2000, %ecx\n"   // 80x25 = 2000 znaków
-        "rep stosw\n"         // Wypełnia pamięć wartościami z AX
+        "mov $0x0720, %ax\n"  
+        "mov $2000, %ecx\n" 
+        "rep stosw\n"        
     );
     cursor_x = cursor_y = 0;
 }
