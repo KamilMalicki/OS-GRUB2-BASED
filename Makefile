@@ -20,7 +20,7 @@ kernel.iso: kernel.bin
 	cp kernel.bin iso/boot/kernel.bin
 	echo 'set timeout=0' > iso/boot/grub/grub.cfg
 	echo 'set default=0' >> iso/boot/grub/grub.cfg
-	echo 'menuentry "MyOS" {' >> iso/boot/grub/grub.cfg
+	echo 'menuentry "KamilMalicki" {' >> iso/boot/grub/grub.cfg
 	echo '    multiboot /boot/kernel.bin' >> iso/boot/grub/grub.cfg
 	echo '}' >> iso/boot/grub/grub.cfg
 	grub-mkrescue -o kernel.iso iso
